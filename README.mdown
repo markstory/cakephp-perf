@@ -1,0 +1,15 @@
+# CakePHP Perf
+
+A very basic peformance suite to compare the various versions of CakePHP on a number of basic tasks:
+
+* Hello World Page.
+* A list of 20 records out of a SQLite database.
+* A very simple add record form.
+
+Each directory contains a similar application. You can test the applications using make:
+
+```
+make test VERSION=3-0
+```
+
+The make script assumes you are running the harness at `localhost/cakephp-perf/`.
