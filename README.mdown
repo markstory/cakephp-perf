@@ -13,3 +13,11 @@ make test VERSION=3-0
 ```
 
 The make script assumes you are running the harness at `localhost/cakephp-perf/`.
+
+# Requirements
+
+* PHP 5.4.19+
+* Make
+* siege
+* A webserver
+
