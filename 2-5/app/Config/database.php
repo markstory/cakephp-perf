@@ -65,11 +65,11 @@
 class DATABASE_CONFIG {
 
 	public $default = array(
-		'datasource' => 'Database/Sqlite',
-		'database' => 'database_name',
+		'datasource' => 'Database/Mysql',
+		'host' => 'localhost',
+		'user' => 'root',
+		'password' => '',
+		'database' => 'cake_perf',
 	);
 
-	public function __construct() {
-		$this->default['database'] = ROOT . DS . 'db/database.sqlite';
-	}
 }

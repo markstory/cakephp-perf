@@ -9,7 +9,10 @@ guard-%:
 		exit 1; \
 	fi;
 
-test: guard-VERSION
+make_db:
+	mysql -u root -h localhost < ./db.sql
+
+test: guard-VERSION make_db
 	@echo "Warming cache"
 	@curl -XGET "http://localhost/$(URL_PATH)/$(VERSION)/articles" > /dev/null
 	@echo '-------------------------------------------'
