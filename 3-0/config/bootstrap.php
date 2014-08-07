@@ -12,7 +12,6 @@
  * @since         0.10.8
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
-namespace App\Config;
 
 /**
  * Configure paths required to find CakePHP + general filepath
@@ -32,7 +31,7 @@ require ROOT . '/vendor/autoload.php';
  * - Registering the CakePHP autoloader.
  * - Setting the default application paths.
  */
-require CAKE . 'bootstrap.php';
+require CORE_PATH . 'config' . DS . 'bootstrap.php';
 
 use Cake\Cache\Cache;
 use Cake\Configure\Engine\PhpConfig;
