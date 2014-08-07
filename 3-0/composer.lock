@@ -7,20 +7,126 @@
     "hash": "efad2daa79c1d7330996a735ea993e4e",
     "packages": [
         {
+            "name": "aura/installer-default",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/installer-default.git",
+                "reference": "52f8de3670cc1ef45a916f40f732937436d028c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/installer-default/zipball/52f8de3670cc1ef45a916f40f732937436d028c8",
+                "reference": "52f8de3670cc1ef45a916f40f732937436d028c8",
+                "shasum": ""
+            },
+            "type": "composer-installer",
+            "extra": {
+                "class": "Aura\\Composer\\DefaultInstaller"
+            },
+            "autoload": {
+                "psr-0": {
+                    "Aura\\Composer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul M. Jones",
+                    "email": "pmjones88@gmail.com",
+                    "homepage": "http://paul-m-jones.com"
+                }
+            ],
+            "description": "Installs Aura packages using the Composer defaults.",
+            "keywords": [
+                "aura",
+                "installer"
+            ],
+            "time": "2012-11-26 21:35:57"
+        },
+        {
+            "name": "aura/intl",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Intl.git",
+                "reference": "e6c84d52ae8749f5a346918f20d9027353f1f5bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Intl/zipball/e6c84d52ae8749f5a346918f20d9027353f1f5bc",
+                "reference": "e6c84d52ae8749f5a346918f20d9027353f1f5bc",
+                "shasum": ""
+            },
+            "require": {
+                "aura/installer-default": "1.0.*",
+                "php": ">=5.4.0"
+            },
+            "type": "aura-package",
+            "autoload": {
+                "psr-0": {
+                    "Aura\\Intl": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Paul M. Jones",
+                    "email": "pmjones88@gmail.com",
+                    "homepage": "http://paul-m-jones.com"
+                },
+                {
+                    "name": "Aura.Intl Contributors",
+                    "homepage": "https://github.com/auraphp/Aura.Intl/contributors"
+                },
+                {
+                    "name": "Pascal Borreli",
+                    "email": "pascal@borreli.com"
+                },
+                {
+                    "name": "Mapthegod",
+                    "email": "mapthegod@gmail.com"
+                },
+                {
+                    "name": "José Lorenzo Rodríguez",
+                    "email": "jose.zap@gmail.com"
+                }
+            ],
+            "description": "The Aura.Intl package provides internationalization (I18N) tools, specifically\npackage-oriented per-locale message translation.",
+            "homepage": "http://auraphp.com/Aura.Intl",
+            "keywords": [
+                "g11n",
+                "globalization",
+                "i18n",
+                "internationalization",
+                "intl",
+                "l10n",
+                "localization"
+            ],
+            "time": "2014-07-29 00:00:00"
+        },
+        {
             "name": "cakephp/cakephp",
             "version": "3.0.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp.git",
-                "reference": "deed3dc8786547422a4a955aa9ddbe02d383b8b5"
+                "reference": "2600c652343cc532d1c30da3b84e1be1e7e6d6db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/deed3dc8786547422a4a955aa9ddbe02d383b8b5",
-                "reference": "deed3dc8786547422a4a955aa9ddbe02d383b8b5",
+                "url": "https://api.github.com/repos/cakephp/cakephp/zipball/2600c652343cc532d1c30da3b84e1be1e7e6d6db",
+                "reference": "2600c652343cc532d1c30da3b84e1be1e7e6d6db",
                 "shasum": ""
             },
             "require": {
+                "aura/intl": "1.1.*",
                 "ext-intl": "*",
                 "ext-mbstring": "*",
                 "ext-mcrypt": "*",
@@ -53,7 +159,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-08-01 02:22:55"
+            "time": "2014-08-06 14:48:41"
         },
         {
             "name": "ircmaxell/password-compat",
