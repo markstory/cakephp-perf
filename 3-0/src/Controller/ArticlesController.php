@@ -15,9 +15,9 @@ class ArticlesController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->set('articles', $this->paginate($this->Articles));
-	}
+    public function index() {
+        $this->set('articles', $this->paginate($this->Articles));
+    }
 
 /**
  * View method
@@ -26,30 +26,30 @@ class ArticlesController extends AppController {
  * @return void
  * @throws NotFoundException
  */
-	public function view($id = null) {
-		$article = $this->Articles->get($id, [
-			'contain' => []
-		]);
-		$this->set('article', $article);
-	}
+    public function view($id = null) {
+        $article = $this->Articles->get($id, [
+            'contain' => []
+        ]);
+        $this->set('article', $article);
+    }
 
 /**
  * Add method
  *
  * @return void
  */
-	public function add() {
-		$article = $this->Articles->newEntity($this->request->data);
-		if ($this->request->is('post')) {
-			if ($this->Articles->save($article)) {
-				$this->Flash->success('The article has been saved.');
-				return $this->redirect(['action' => 'index']);
-			} else {
-				$this->Flash->error('The article could not be saved. Please, try again.');
-			}
-		}
-		$this->set(compact('article'));
-	}
+    public function add() {
+        $article = $this->Articles->newEntity($this->request->data);
+        if ($this->request->is('post')) {
+            if ($this->Articles->save($article)) {
+                $this->Flash->success('The article has been saved.');
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error('The article could not be saved. Please, try again.');
+            }
+        }
+        $this->set(compact('article'));
+    }
 
 /**
  * Edit method
@@ -58,21 +58,21 @@ class ArticlesController extends AppController {
  * @return void
  * @throws NotFoundException
  */
-	public function edit($id = null) {
-		$article = $this->Articles->get($id, [
-			'contain' => []
-		]);
-		if ($this->request->is(['post', 'put'])) {
-			$article = $this->Articles->patchEntity($article, $this->request->data);
-			if ($this->Articles->save($article)) {
-				$this->Flash->success('The article has been saved.');
-				return $this->redirect(['action' => 'index']);
-			} else {
-				$this->Flash->error('The article could not be saved. Please, try again.');
-			}
-		}
-		$this->set(compact('article'));
-	}
+    public function edit($id = null) {
+        $article = $this->Articles->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(['post', 'put'])) {
+            $article = $this->Articles->patchEntity($article, $this->request->data);
+            if ($this->Articles->save($article)) {
+                $this->Flash->success('The article has been saved.');
+                return $this->redirect(['action' => 'index']);
+            } else {
+                $this->Flash->error('The article could not be saved. Please, try again.');
+            }
+        }
+        $this->set(compact('article'));
+    }
 
 /**
  * Delete method
@@ -81,14 +81,14 @@ class ArticlesController extends AppController {
  * @return void
  * @throws NotFoundException
  */
-	public function delete($id = null) {
-		$article = $this->Articles->get($id);
-		$this->request->allowMethod('post', 'delete');
-		if ($this->Articles->delete($article)) {
-			$this->Flash->success('The article has been deleted.');
-		} else {
-			$this->Flash->error('The article could not be deleted. Please, try again.');
-		}
-		return $this->redirect(['action' => 'index']);
-	}
+    public function delete($id = null) {
+        $article = $this->Articles->get($id);
+        $this->request->allowMethod('post', 'delete');
+        if ($this->Articles->delete($article)) {
+            $this->Flash->success('The article has been deleted.');
+        } else {
+            $this->Flash->error('The article could not be deleted. Please, try again.');
+        }
+        return $this->redirect(['action' => 'index']);
+    }
 }

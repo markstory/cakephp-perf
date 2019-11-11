@@ -34,5 +34,9 @@ class AppController extends Controller {
  *
  * @var array
  */
-	public $components = ['Flash'];
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Flash');
+    }
 }
