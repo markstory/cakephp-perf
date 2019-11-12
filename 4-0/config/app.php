@@ -9,7 +9,7 @@ return [
  * Development Mode:
  * true: Errors and warnings shown.
  */
-    'debug' => true,
+    'debug' => false,
 
 /**
  * Configure basic information about the application.
@@ -94,7 +94,7 @@ return [
             'prefix' => 'myapp_cake_core_',
             'path' => CACHE . 'persistent/',
             'serialize' => true,
-            'duration' => '+2 minutes',
+            'duration' => '+1 year',
         ],
 
     /**
@@ -106,7 +106,7 @@ return [
             'prefix' => 'my_app_cake_model_',
             'path' => CACHE . 'models/',
             'serialize' => true,
-            'duration' => '+2 minutes',
+            'duration' => '+1 year',
         ],
     ],
 
