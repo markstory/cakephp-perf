@@ -1,45 +1,41 @@
-DROP DATABASE IF EXISTS cake_perf;
-
-CREATE DATABASE cake_perf;
-
-USE cake_perf;
+DROP TABLE IF EXISTS articles;
 
 CREATE TABLE articles (
-	id integer not null primary key auto_increment,
-	title varchar(255),
-	body TEXT,
-	created datetime,
-	modified datetime
+    id integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+    title varchar(255),
+    body TEXT,
+    created datetime,
+    modified datetime
 );
 
 INSERT INTO articles (title, body, created, modified) VALUES
-('First Post', 'First Post', NOW(), NOW()),
-('Second Post', 'Second Post', NOW(), NOW()),
-('Third Post', 'Third Post', NOW(), NOW()),
-('Fourth Post', 'Fourth Post', NOW(), NOW()),
-('Fifth Post', 'Fifth Post', NOW(), NOW()),
-('Sixth Post', 'Sixth Post', NOW(), NOW()),
-('Seventh Post', 'Seventh Post', NOW(), NOW()),
-('Eighth Post', 'Eighth Post', NOW(), NOW()),
-('Ninth Post', 'Ninth Post', NOW(), NOW()),
-('Tenth Post', 'Tenth Post', NOW(), NOW()),
-('First Post', 'First Post', NOW(), NOW()),
-('Second Post', 'Second Post', NOW(), NOW()),
-('Third Post', 'Third Post', NOW(), NOW()),
-('Fourth Post', 'Fourth Post', NOW(), NOW()),
-('Fifth Post', 'Fifth Post', NOW(), NOW()),
-('Sixth Post', 'Sixth Post', NOW(), NOW()),
-('Seventh Post', 'Seventh Post', NOW(), NOW()),
-('Eighth Post', 'Eighth Post', NOW(), NOW()),
-('Ninth Post', 'Ninth Post', NOW(), NOW()),
-('Tenth Post', 'Tenth Post', NOW(), NOW()),
-('First Post', 'First Post', NOW(), NOW()),
-('Second Post', 'Second Post', NOW(), NOW()),
-('Third Post', 'Third Post', NOW(), NOW()),
-('Fourth Post', 'Fourth Post', NOW(), NOW()),
-('Fifth Post', 'Fifth Post', NOW(), NOW()),
-('Sixth Post', 'Sixth Post', NOW(), NOW()),
-('Seventh Post', 'Seventh Post', NOW(), NOW()),
-('Eighth Post', 'Eighth Post', NOW(), NOW()),
-('Ninth Post', 'Ninth Post', NOW(), NOW()),
-('Tenth Post', 'Tenth Post', NOW(), NOW());
+('First Post', 'First Post', datetime('now'), datetime('now')),
+('Second Post', 'Second Post', datetime('now'), datetime('now')),
+('Third Post', 'Third Post', datetime('now'), datetime('now')),
+('Fourth Post', 'Fourth Post', datetime('now'), datetime('now')),
+('Fifth Post', 'Fifth Post', datetime('now'), datetime('now')),
+('Sixth Post', 'Sixth Post', datetime('now'), datetime('now')),
+('Seventh Post', 'Seventh Post', datetime('now'), datetime('now')),
+('Eighth Post', 'Eighth Post', datetime('now'), datetime('now')),
+('Ninth Post', 'Ninth Post', datetime('now'), datetime('now')),
+('Tenth Post', 'Tenth Post', datetime('now'), datetime('now')),
+('First Post', 'First Post', datetime('now'), datetime('now')),
+('Second Post', 'Second Post', datetime('now'), datetime('now')),
+('Third Post', 'Third Post', datetime('now'), datetime('now')),
+('Fourth Post', 'Fourth Post', datetime('now'), datetime('now')),
+('Fifth Post', 'Fifth Post', datetime('now'), datetime('now')),
+('Sixth Post', 'Sixth Post', datetime('now'), datetime('now')),
+('Seventh Post', 'Seventh Post', datetime('now'), datetime('now')),
+('Eighth Post', 'Eighth Post', datetime('now'), datetime('now')),
+('Ninth Post', 'Ninth Post', datetime('now'), datetime('now')),
+('Tenth Post', 'Tenth Post', datetime('now'), datetime('now')),
+('First Post', 'First Post', datetime('now'), datetime('now')),
+('Second Post', 'Second Post', datetime('now'), datetime('now')),
+('Third Post', 'Third Post', datetime('now'), datetime('now')),
+('Fourth Post', 'Fourth Post', datetime('now'), datetime('now')),
+('Fifth Post', 'Fifth Post', datetime('now'), datetime('now')),
+('Sixth Post', 'Sixth Post', datetime('now'), datetime('now')),
+('Seventh Post', 'Seventh Post', datetime('now'), datetime('now')),
+('Eighth Post', 'Eighth Post', datetime('now'), datetime('now')),
+('Ninth Post', 'Ninth Post', datetime('now'), datetime('now')),
+('Tenth Post', 'Tenth Post', datetime('now'), datetime('now'));

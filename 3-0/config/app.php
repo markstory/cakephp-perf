@@ -201,11 +201,8 @@ return [
     'Datasources' => [
         'default' => [
             'className' => 'Cake\Database\Connection',
-            'driver' => 'Cake\Database\Driver\Mysql',
-            'host' => 'localhost',
-            'user' => 'root',
-            'password' => '',
-            'database' => 'cake_perf',
+            'driver' => 'Cake\Database\Driver\Sqlite',
+            'database' => ROOT . DS . 'db.sqlite',
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'cacheMetadata' => true,

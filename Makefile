@@ -1,6 +1,6 @@
-.PHONY: test
+.PHONY: test server
 
-URL_PATH=cakephp-perf
+PORT=8765
 
 # Utility target for checking required parameters
 guard-%:
@@ -9,19 +9,22 @@ guard-%:
 		exit 1; \
 	fi;
 
-make_db:
-	mysql -u root -h localhost < ./db.sql
+make_db: guard-VERSION
+	cd $(VERSION) && sqlite3 db.sqlite < ../db.sql
 
-test: guard-VERSION make_db
+server: guard-VERSION make_db
+	cd $(VERSION) && bin/cake server --port=$(PORT)
+
+test:
 	@echo "Warming cache"
-	@curl -XGET "http://localhost/$(URL_PATH)/$(VERSION)/articles" > /dev/null
+	@curl -XGET "http://localhost:$(PORT)/articles" > /dev/null
 	@echo '-------------------------------------------'
 	@echo "Hitting /"
-	siege -r 100 -c 5 "http://localhost/$(URL_PATH)/$(VERSION)/"
+	siege -r 100 -c 1 "http://localhost:$(PORT)/"
 	@echo '-------------------------------------------'
 	@echo "Hitting /articles - list page"
-	siege -r 100 -c 5 "http://localhost/$(URL_PATH)/$(VERSION)/articles"
+	siege -r 100 -c 1 "http://localhost:$(PORT)/articles"
 	@echo '-------------------------------------------'
 	@echo "Hitting /articles/add - form"
-	siege -r 100 -c 5 "http://localhost/$(URL_PATH)/$(VERSION)/articles/add"
+	siege -r 100 -c 1 "http://localhost:$(PORT)/articles/add"
 	@echo '-------------------------------------------'
