@@ -9,15 +9,16 @@ A very basic peformance suite to compare the various versions of CakePHP on a nu
 Each directory contains a similar application. You can test the applications using make:
 
 ```bash
-# Run an application in foreground with php server
-make server VERSION=3-0
-
-# In another terminal
-make test
+# Run tests for a specific version
+make test VERSION=3-0 URL_PATH=cakephp-perf
 ```
+
+This will run tests against `localhost/cakephp-perf/3-0/`. You will need to put
+this repository inside your webserver's directory.
 
 # Requirements
 
+* A webserver
 * PHP 5.6.19+, PHP 7.2 for 4-0.
 * sqlite3 CLI tool.
 * Make
