@@ -3,9 +3,9 @@
 	<fieldset>
 		<legend><?= __('Edit Article'); ?></legend>
 	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('title');
-		echo $this->Form->input('body');
+		echo $this->Form->control('id');
+		echo $this->Form->control('title');
+		echo $this->Form->control('body');
 	?>
 	</fieldset>
 <?= $this->Form->button(__('Submit')); ?>

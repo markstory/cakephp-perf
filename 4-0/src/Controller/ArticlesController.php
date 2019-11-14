@@ -39,7 +39,7 @@ class ArticlesController extends AppController {
  * @return void
  */
     public function add() {
-        $article = $this->Articles->newEntity($this->request->data);
+        $article = $this->Articles->newEntity($this->request->getData());
         if ($this->request->is('post')) {
             if ($this->Articles->save($article)) {
                 $this->Flash->success('The article has been saved.');
